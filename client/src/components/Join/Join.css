@@ -1,0 +1,11 @@
+.joinContainer {
+    width: 960px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+ h1{
+    color: red;
+    border-bottom: 5px dotted black;
+    text-align: center;
+}
