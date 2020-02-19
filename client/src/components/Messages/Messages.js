@@ -1,19 +1,13 @@
 import React from 'react';
 
-import './Input.css';
+import ScrollToBottom from 'react-scroll-to-bottom'
+import Message from './Message/Message'
+import './Messages.css';
 
-const Input = ({ message, setMessage, sendMessage }) => (
-   <form className="form">
-       <input 
-       className="input"
-       type="text"
-       placeholder="Type a message..."
-       value={message}
-       onChange={(event) => setMessage(event.target.value)}
-       onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
-       />
-       <button className="sendButton" onClick={(event) => sendMessage(event)}>Send</button>
-   </form> 
+const Messages = ({ messages, name }) => (
+  <ScrollToBottom className="messages">
+      {messages.map((message, i) => <div key={i}><Message message={message} name={name}/></div>)}
+  </ScrollToBottom>
 )
 
-export default Input;
+export default Messages;

@@ -2,8 +2,9 @@ import React, {useState, useEffect } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
-import InfoBar from '../InfoBar/InfoBar.js'
-import Input from '../Input/Input.js'
+import InfoBar from '../InfoBar/InfoBar.js';
+import Input from '../Input/Input.js';
+import Messages from '../Messages/Messages.js';
 
 import './Chat.css';
 let socket;
@@ -58,10 +59,11 @@ console.log(message, messages);
         <div className="outerContainer">
             <div className="container">
                 <InfoBar room={room}/>
-
+                <Messages messages={messages} name={name} />
                 <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
 
             </div>
+            {/* <TextContainer users={users} /> */}
         </div>
     )
 }
